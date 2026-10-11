@@ -1,0 +1,13 @@
+
+services:
+  kokoro-tts:
+    image: ghcr.io/remsky/kokoro-fastapi-cpu:latest
+    container_name: kokoro-tts
+    restart: unless-stopped
+    ports:
+      - "8880:8880"
+    volumes:
+      - kokoro-models:/app/api/src/models
+
+volumes:
+  kokoro-models:
