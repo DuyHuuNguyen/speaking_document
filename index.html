@@ -22,10 +22,15 @@
         padding-right: 10px;
         text-align: justify;
     }
+    .center-audio-and-auto-repeat{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-bottom: 5px;
+    }
 </style>
 <body>
 <ul>
-
     <li>
         <p>
             A few years ago I went cycling in Holland with my mum, dad and Alice,
@@ -35,9 +40,15 @@
             However. by the end of the first week I found myself having a good time with my
             parents. I wasn't a kid any more, and I felt that we were forming a friendship.
         </p>
-        <audio controls>
-            <source src="./audio/speaker1.mp3" type="audio/mpeg">
-        </audio>
+        <div class="center-audio-and-auto-repeat">
+            <audio id="audio1" controls>
+                <source src="./audio/speaker1.mp3" type="audio/mpeg">
+            </audio>
+
+            <button onclick="toggleLoop('audio1', this)">
+                🔁 Repeat: OFF
+            </button>
+        </div>
     </li>
     <br/>
     <li>
@@ -50,10 +61,17 @@
             on our modern society. The main thing I got from the holiday was the feeling that I
             had a better understanding of where I'd come from and who I was.
         </p>
-        <audio controls>
-            <source src="./audio/speaker2.mp3" type="audio/mpeg">
-        </audio>
+        <div class="center-audio-and-auto-repeat">
+            <audio id="audio2" controls>
+                <source src="./audio/speaker2.mp3" type="audio/mpeg">
+            </audio>
+
+            <button onclick="toggleLoop('audio2', this)">
+                🔁 Repeat: OFF
+            </button>
+        </div>
     </li>
 </ul>
+<script src="index.js"></script>
 </body>
 </html>
