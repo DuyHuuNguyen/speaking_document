@@ -35,16 +35,26 @@
 <ul>
     <li>
         <p>
-            A few years ago I went cycling in Holland with my mum, dad and Alice,
-            my sister. <strong>I hadn't really been looking forward to it; </strong> I was a teenager, and I didn't
-            get on with my parents. As I had expected, the things my family chose to see <strong>weren't
-            all that interesting</strong>, and for the first couple of days I was in a really bad mood.
-            However. by the end of the first week I found myself having a good time with my
-            parents. I wasn't a kid any more, and I felt that we were forming a friendship.
+            Hello everyone, welcome back to my channel! Today, I’ll show you the exact data structure that helps databases find entries super quickly—the B-Tree index!
+            <br/>
+            Let’s dive deep! At the top, we have the Root Node. As you go down, you hit Branch Nodes (or internal nodes).
+            <br/>
+            Think of branch nodes as traffic cops.
+            <br/>
+            They contain conditional data (keys) that tell the database whether to go left or right based on your search conditions.
+            Once you reach the bottom, you arrive at the Leaf Nodes. Here is the magic part: all leaf nodes are connected via a doubly-linked list.
+            <br/>
+            This means if you're querying a range (like BETWEEN or >, <), the database doesn't need to go back to the root.
+            <br/>
+            It can just smoothly move to the previous or next leaf node instantly!
+            <br/>
+            Finally, how do we get the actual data? From the leaf node, you can access the table row using a RID (Row ID) if it's a non-clustered index... or, in some databases or clustered indexes, the actual data is already stored right inside the leaf node itself!
+            <br/>
+            Pretty cool, right? Hit follow if you want to geek out on more backend secrets!
         </p>
         <div class="center-audio-and-auto-repeat">
             <audio id="audio1" controls>
-                <source src="./audio/speaker1.mp3" type="audio/mpeg">
+                <source src="./audio/database_btree.mp3" type="audio/mpeg">
             </audio>
 
             <button onclick="toggleLoop('audio1', this)">
