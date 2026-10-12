@@ -1,0 +1,27 @@
+strong{
+    background-color: #efda83;
+    border-radius: 5px;
+}
+li {
+    list-style: none;
+    border: 1px solid black;
+}
+li p,audio{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+.center-audio-and-auto-repeat{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 5px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.active-header{
+    background-color: #34a938;
+    border-radius: 3px;
+}
