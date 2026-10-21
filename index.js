@@ -38,24 +38,23 @@ function playNext() {
     if (!playAllActive) return;
 
     if (playQueue.length === 0) {
-        stopPlayAll(); // phát hết rồi
+        stopPlayAll();
         return;
     }
 
     currentAudio = playQueue.shift();
-    currentAudio.loop = false;      // tắt repeat để audio có thể kết thúc
+    currentAudio.loop = false;
     currentAudio.currentTime = 0;
     currentAudio.onended = playNext;
     currentAudio.play().catch(err => {
         console.error('Không phát được audio:', err);
-        playNext(); // lỗi thì bỏ qua, phát cái kế tiếp
+        playNext();
     });
 }
 
 function playAllRandom() {
     const btn = document.getElementById('play-all-btn');
 
-    // Bấm lần nữa khi đang phát => dừng
     if (playAllActive) {
         stopPlayAll();
         return;
@@ -64,7 +63,6 @@ function playAllRandom() {
     const audios = document.querySelectorAll('audio');
     if (audios.length === 0) return;
 
-    // Dừng mọi audio đang phát và reset nút Repeat
     audios.forEach(a => {
         a.pause();
         a.loop = false;
